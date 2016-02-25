@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   particleground(document.querySelector('.particleground'), {
     dotColor: '#aaaaaa',
     lineColor: '#777777',
-    maxSpeedX: 0.7,
+    maxSpeedX: 0.5,
     maxSpeedY: 0.7,
     particleRadius: 7,
     curvedLines: false,
@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
     density: 37000,
     directionX: 'left',
   });
-  var intro = document.getElementById('intro');
-  intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+  // var intro = document.getElementById('intro');
+  // intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
 }, false);
 
 
@@ -94,7 +94,7 @@ function getUrl() {
 						},
 
 					// Delay.
-						delay: 8000
+						delay: 12000
 
 				};
 
@@ -111,7 +111,7 @@ function getUrl() {
 
 
 				// for (k in settings.images) {
-				for (var i =0; i<10; i++) {
+				for (var i =0; i<5; i++) {
 					// Create BG.
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + getUrl() + '")';
@@ -156,7 +156,6 @@ function getUrl() {
 						}, settings.delay / 2);
 
 				}, settings.delay);
-
 		})();
 
 	// Signup Form.
