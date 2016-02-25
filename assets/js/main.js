@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     maxSpeedY: 0.7,
     particleRadius: 7,
     curvedLines: false,
-    parallaxMultiplier: 15,
+    parallaxMultiplier: 1000,
     proximity: 137,
     density: 37000,
     directionX: 'left',
@@ -23,11 +23,33 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false);
 
 
+var uniqueRandoms = [];
+var numRandoms = 100;
+function makeUniqueRandom() {
+    // refill the array if needed
+    if (!uniqueRandoms.length) {
+        for (var i = 0; i < numRandoms; i++) {
+            uniqueRandoms.push(i);
+        }        
+    }
+    var index = Math.floor(Math.random() * uniqueRandoms.length);
+    var val = uniqueRandoms[index];
+
+    // now remove that value from the array
+    uniqueRandoms.splice(index, 1);    
+    return val;
+
+}
+
+
 function getUrl() {
 	var slash = "";
-	for(var i=0;i<Math.floor(Math.random() * 20);i++) {
-		slash += "/"
+	var total = 0;
+	for(var i=0;i<makeUniqueRandom();i++) {		
+		slash += "/";
+		total += 1;
 	}
+	console.log(total);
 	return "https://source.unsplash.com/category/buildings/" + window.innerWidth + 'x' + window.innerHeight + slash
 }
 
@@ -203,5 +225,4 @@ function getUrl() {
 				});
 
 		})();
-
 })();
