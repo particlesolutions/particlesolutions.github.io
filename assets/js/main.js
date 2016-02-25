@@ -5,6 +5,23 @@
 */
 // https://source.unsplash.com/category/buildings/1920x1080
 
+document.addEventListener('DOMContentLoaded', function () {
+  particleground(document.querySelector('.particleground'), {
+    dotColor: '#aaaaaa',
+    lineColor: '#777777',
+    maxSpeedX: 0.7,
+    maxSpeedY: 0.7,
+    particleRadius: 7,
+    curvedLines: false,
+    parallaxMultiplier: 15,
+    proximity: 137,
+    density: 37000,
+    directionX: 'left',
+  });
+  var intro = document.getElementById('intro');
+  intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+}, false);
+
 
 function getUrl() {
 	var slash = "";
